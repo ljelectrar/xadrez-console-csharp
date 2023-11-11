@@ -1,5 +1,6 @@
 ﻿using System;
 using tabuleiro;
+using xadrez_console_csharp;
 
 namespace XadrezConsoleCsharp
 {
@@ -7,11 +8,9 @@ namespace XadrezConsoleCsharp
     {
         static void Main(string[] args)
         {
-            Posicao p = new Posicao(3, 4);
+            Tabuleiro tab = new Tabuleiro(10, 10);
 
-            Console.WriteLine("Posicao: " + p);
-
-            Console.WriteLine();
+            Tela.imprimirTabuleiro(tab);
         }
     }
 }
