@@ -32,12 +32,27 @@
 
         public void colocarPeca(Peca p, Posicao pos)
         {
-            if(existePeca(pos))
+            if (existePeca(pos))
             {
                 throw new TabuleiroException("Já existe uma peça nesta posição");
             }
             pecas[pos.Linha, pos.Coluna] = p;
             p.Posicao = pos;
+        }
+
+        public Peca retirarPeca(Posicao pos)
+        {
+            if (Peca(pos) == null)
+            {
+                return null;
+            }
+            else
+            {
+                Peca aux = Peca(pos);
+                aux.Posicao = null;
+                pecas[pos.Linha, pos.Coluna] = null;
+                return aux;
+            }
         }
 
         public bool posicaoValida(Posicao pos)
