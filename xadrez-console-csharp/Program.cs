@@ -8,13 +8,26 @@ namespace XadrezConsoleCsharp
     {
         static void Main(string[] args)
         {
-            PosicaoXadrez pos = new PosicaoXadrez('a', 1);
-            PosicaoXadrez pos2 = new PosicaoXadrez('c', 7);
+            try
+            {
+                Tabuleiro tab = new Tabuleiro(8, 8);
 
-            Console.WriteLine(pos);
+                tab.colocarPeca(new Torre(tab, Cor.Preta), new Posicao(0, 0));
+                tab.colocarPeca(new Torre(tab, Cor.Preta), new Posicao(1, 3));
+                tab.colocarPeca(new Rei(tab, Cor.Preta), new Posicao(0, 2));
 
-            Console.WriteLine(pos.toPosicao());
-            Console.WriteLine(pos2.toPosicao());
+                tab.colocarPeca(new Torre(tab, Cor.Branca), new Posicao(1, 1));
+                tab.colocarPeca(new Rei(tab, Cor.Branca), new Posicao(2, 2));
+                
+                Tela.imprimirTabuleiro(tab);
+
+
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
 
         }
