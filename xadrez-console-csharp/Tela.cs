@@ -17,12 +17,20 @@ namespace XadrezConsoleCsharp
             Console.WriteLine("\nTurno: " + partida.Turno
                             + "\nAguardando jogada: " + partida.JogadorAtual);
 
-            if (partida.xeque)
+            if(!partida.Terminada)
             {
-                Console.WriteLine("XEQUE!");
+                if (partida.xeque)
+                {
+                    Console.WriteLine("Aguardando jogada: " + partida.JogadorAtual);
+                    Console.WriteLine("XEQUE!");
+                }
+            } else
+            {
+                Console.WriteLine("XEQUEMATE!");
+                Console.WriteLine("Vencedor: " + partida.JogadorAtual);
             }
-            
 
+            
         }
 
         public static void imprimirPecasCapturadas(PartidaDeXadrez partida)
