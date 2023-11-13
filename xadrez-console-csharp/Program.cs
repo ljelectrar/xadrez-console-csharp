@@ -20,8 +20,6 @@ namespace XadrezConsoleCsharp
                         Console.Clear();
                         Tela.imprimirPartida(partida);
 
-                        
-
                         Console.Write("\nOrigem: ");
                         Posicao origem = Tela.lerPosicaoXadrez().toPosicao();
                         partida.validarPosicaoDeOrgigem(origem);
@@ -42,11 +40,9 @@ namespace XadrezConsoleCsharp
                         Console.WriteLine(e.Message);
                         Console.ReadLine();
                     }
-
+                    Console.Clear();
+                    Tela.imprimirPartida(partida);
                 }
-
-           
-
 
             }
             catch (Exception ex)
